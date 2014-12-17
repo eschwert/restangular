@@ -22,9 +22,9 @@ import org.restlet.data.Protocol;
 
 public class RestangularComponent extends Component {
 
-    public static void main(String[] args) throws Exception {
-        new RestangularComponent().start();
-    }
+//    //public static void main(String[] args) throws Exception {
+//        new RestangularComponent().start();
+//    }
 
     public RestangularComponent() {
         Server server = new Server(Protocol.HTTP, 8000);
@@ -32,6 +32,8 @@ public class RestangularComponent extends Component {
         //server.getContext().getParameters().set("tracing", "true");
 
         getClients().add(Protocol.CLAP);
+        //getClients().add(Protocol.JAR);
+        getClients().add(Protocol.OBAP);
 
         getDefaultHost().attachDefault(new RestangularApplication());
 

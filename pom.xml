@@ -32,7 +32,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.javaVersion>1.7</project.build.javaVersion>
         <!-- Dependencies -->
-        <version.lib.restlet>2.1.2</version.lib.restlet>
+        <version.lib.restlet>2.2.3</version.lib.restlet>
     </properties>
 
     <!-- ================================================================================ -->
@@ -53,12 +53,12 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.restlet.jse</groupId>
+            <groupId>org.restlet.osgi</groupId>
             <artifactId>org.restlet</artifactId>
             <version>${version.lib.restlet}</version>
         </dependency>
         <dependency>
-            <groupId>org.restlet.jee</groupId>
+            <groupId>org.restlet.osgi</groupId>
             <artifactId>org.restlet.ext.jackson</artifactId>
             <version>${version.lib.restlet}</version>
         </dependency>

@@ -20,6 +20,7 @@ import net.thecodersbreakfast.restangular.server.rest.resource.TodoListResource;
 import net.thecodersbreakfast.restangular.server.rest.resource.TodoResource;
 import org.restlet.Application;
 import org.restlet.Restlet;
+import org.restlet.data.LocalReference;
 import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
 
@@ -29,13 +30,22 @@ public class RestangularApplication extends Application {
         setName("Restangular");
         setDescription("RESTlet + AngularJS integration");
         setOwner("thecodersbreakfast.net");
-        setAuthor("Olivier Croisier");
+        setAuthor("Eugen Schwert");
     }
 
     @Override
     public Restlet createInboundRoot() {
-        Directory directory = new Directory(getContext(), "clap://class/static/");
+//       Directory directory = new Directory(getContext(), "clap://class/static/");
+
+        Directory directory = new Directory(getContext(), "obap://restangular/static/");
+
+//        Directory directory = new Directory(getContext(),
+//                LocalReference.createClapReference(LocalReference., "static"));
+//        directory.setIndexName("index.html");
+
         directory.setDeeplyAccessible(true);
+
+        System.out.println("directory " + directory);
 
         Router router = new Router(getContext());
         router.attach("/web", directory);
